@@ -9,9 +9,9 @@ const list = async ({request, response, view}:httpContextContract){
     const usuario = await Usuario.all()
 
 
-    return usuario
+    return view.render('welcome', {usuario});
   }catch (e){
-
+    return view.render('server-error');
   }
 }
 
