@@ -19,7 +19,8 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import { httpContextContract } from "@ioc:Adonis/Core/HttpContext";
+import UsuariosController from "App/Controllers/Http/UsuariosController";
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
+const usuario = new UsuariosController()
+Route.get('/', ({ request, view }: httpContextContract) => usuario.list(request, view))

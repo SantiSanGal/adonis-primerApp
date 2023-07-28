@@ -1,3 +1,10 @@
-// import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-
-export default class UsuariosController {}
+import { list } from './handlers/list'
+export default class UsuariosController {
+  public async list(request, view){
+    const paramns: any = {
+      request,
+      view,
+    }
+    return list(paramns)
+  }
+}
