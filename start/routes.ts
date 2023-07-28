@@ -23,4 +23,4 @@ import { httpContextContract } from "@ioc:Adonis/Core/HttpContext";
 import UsuariosController from "App/Controllers/Http/UsuariosController";
 
 const usuario = new UsuariosController()
-Route.get('/', ({ request, view }: httpContextContract) => usuario.list(request, view))
+Route.get('/', ({ request, response, view }: httpContextContract) => usuario.list(request, response, view))

@@ -11,7 +11,7 @@ export default class Persona extends BaseModel {
   @column()
   public apellido: string
 
-  @column()
+  @column({ columnName: 'cedula' })
   public nroDocumento: number
 
   @column()
